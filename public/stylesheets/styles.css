@@ -53,3 +53,19 @@ player-stats {
     text-align: right;
     right: 10%
 }
+
+grade-display {
+    text-align: center;
+    color: crimson;
+    font-size: 4vh;
+    font-weight: bold;
+    border-width: 10px;
+    border-style: solid;
+    border-color: navy;
+    background-color: white;
+    width: 10%;
+    height: 5vh;
+    position: absolute;
+    top: 60vh;
+    right: 45%;
+}
