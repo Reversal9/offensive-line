@@ -10,6 +10,9 @@ interior-body {
     top: 5vh;
     left: 25vw;
     font-family: "Lato Extended", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-color:navy;
+    border-width: 10px;
+    border-style: solid;
 }
 
 player-name {
