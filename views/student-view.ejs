@@ -32,7 +32,27 @@
         </div>
         <div>
             <!-- Graph/Table -->
-
+            <canvas class="student-graph" id="studentGraph"></canvas>
+            <script>
+                const data = [
+                {x: 10, y: 20},
+                {x: 15, y: 15},
+                {x: 20, y: 10}
+                ]
+                new Chart(
+                    document.getElementById('studentGraph'),
+                    {
+                        type: 'line',
+                        data: {
+                            labels: data.map(row => row.x),
+                            datasets: [
+                                {
+                                    label: 'Line',
+                                    data: data.map(row => row.y)
+                                }]
+                        }
+                    });
+            </script>
         </div>
     </interior-body>
 </body>
