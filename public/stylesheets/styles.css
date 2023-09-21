@@ -75,6 +75,7 @@ grade-display {
 
 .student-graph {
     width: 90%;
+    height: 40vh;
     position: absolute;
     top: 70vh;
     left: 5%;
