@@ -28,7 +28,7 @@
             </player-stats>
             <img class="player-photo" id="playerPhoto"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjL5uRukQxddVG8oeVQpPttaiZotrzgbf71xYUUvRjJTepPztXlK-aI5YMKoNacRmMIm4:https://mario.wiki.gallery/images/thumb/2/27/SuperMarioParty_Waluigi.png/640px-SuperMarioParty_Waluigi.png&usqp=CAU"></img>
-            <grade-display>00</grade-display>
+            <grade-display>0.0</grade-display>
         </div>
         <div>
             <!-- Graph/Table -->
@@ -41,7 +41,7 @@
                 {x: 4, y: 1.0},
                 {x: 5, y: 1.5},
                 {x: 6, y: 1.0},
-                {x: 7, y: 1.0},
+                {x: 7, y: .5},
                 {x: 8, y: 1.5},
                 ]
                 new Chart(
@@ -52,7 +52,7 @@
                             labels: ['Freshman Sem 1', 'Freshman Sem 2', 'Sophmore Sem 1', 'Sophmore Sem 2', 'Junior Sem 1', 'Junior Sem 2', 'Senior Sem 2', 'Senior Sem 2'],
                             datasets: [
                                 {
-                                    label: 'Line',
+                                    label: 'Grade',
                                     data: data.map(row => row.y),
                                     fill: false,
                                     borderColor: 'rgb(0,0,128)',
