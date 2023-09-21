@@ -32,7 +32,9 @@
         </div>
         <div>
             <!-- Graph/Table -->
-            <canvas class="student-graph" id="studentGraph"></canvas>
+            <div class="student-graph">
+                <canvas id="studentGraph"></canvas>
+            </div>
             <script>
                 const data = [
                 {x: 1, y: 1.0},
@@ -60,7 +62,7 @@
                                 }]
                         },
                         options: {
-                            responsive: false,
+                            maintainAspectRatio: false,
                             scales: {
                                 y: {
                                     type: 'linear',
