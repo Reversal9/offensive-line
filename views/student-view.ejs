@@ -48,6 +48,16 @@
                 {x: 7, y: .5},
                 {x: 8, y: 1.5},
                 ]
+                const crimsonLineGrade = [
+                    {y: 1.7},
+                    {y: 1.7},
+                    {y: 1.7},
+                    {y: 1.7},
+                    {y: 1.7},
+                    {y: 1.7},
+                    {y: 1.7},
+                    {y: 1.7}
+                ]
                 new Chart(
                     document.getElementById('studentGraph'),
                     {
@@ -61,7 +71,15 @@
                                     fill: false,
                                     borderColor: 'rgb(0,0,128)',
                                     tension: 0.0,
-                                }]
+                                },
+                                {
+                                    label: 'Crimson Line',
+                                    data: crimsonLineGrade.map(row => row.y),
+                                    fill: false,
+                                    borderColor: 'rgb(220,20,60)',
+                                    tension: 0
+                                }
+                            ]
                         },
                         options: {
                             maintainAspectRatio: false,
