@@ -83,3 +83,19 @@ grade-display {
     border-width: 5px;
     border-color: navy;
 }
+
+table {
+    position: absolute;
+    top: 75%;
+    left: 5%;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+}
+
+th, td {
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    width: 4.6vw;
+}
