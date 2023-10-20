@@ -13,7 +13,7 @@ app.use(routes);
 
 const PORT: string | number = process.env.PORT || 5000;
 
-const uri: string = `mongodb://127.0.0.1:27017`;
+const uri: string = `mongodb://127.0.0.1:27017/offensive-line`;
 
 mongoose
     .connect(uri)
