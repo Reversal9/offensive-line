@@ -88,14 +88,18 @@ table {
     position: absolute;
     top: 75%;
     left: 5%;
-    border-color: black;
+    border-color: navy;
     border-style: solid;
     border-width: 2px;
 }
 
 th, td {
-    border-color: black;
+    border-color: crimson;
     border-style: solid;
     border-width: 2px;
     width: 4.6vw;
+    text-align: center;
+    background-color: navy;
+    color: white;
+    font-size: small;
 }
