@@ -15,17 +15,13 @@ const PORT: string | number = process.env.PORT || 5000;
 
 const uri: string = `mongodb://127.0.0.1:27017`;
 
-app.listen(PORT, () =>
-    console.log(`Server running on http://localhost:${PORT}`)
-)
-
-// mongoose
-//     .connect(uri)
-//     .then(() =>
-//         app.listen(PORT, () =>
-//             console.log(`Server running on http://localhost:${PORT}`)
-//         )
-//     )
-//     .catch(error => {
-//         throw error
-//     });
+mongoose
+    .connect(uri)
+    .then(() =>
+        app.listen(PORT, () =>
+            console.log(`Server running on http://localhost:${PORT}`)
+        )
+    )
+    .catch(error => {
+        throw error
+    });
