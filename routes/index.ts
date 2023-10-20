@@ -1,15 +1,14 @@
 import { Router } from "express";
+import athleteRoutes from "./athleteRoutes";
+import statisticRoutes from "./statisticRoutes";
 
 const router: Router = Router();
+
+router.use(athleteRoutes);
+router.use(statisticRoutes);
 
 router.get('/', (req, res) => {
     res.render('student-view.ejs');
 });
-
-router.get('/user/:id', (req, res) => {
-    const { id } = req.params;
-    // do all the databasing and fetch all information related to this id
-    // then render student-view given information
-})
 
 export default router;
