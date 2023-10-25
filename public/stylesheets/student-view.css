@@ -86,6 +86,7 @@ grade-display {
 
 table {
     position: absolute;
+    width: 91%;
     top: 75%;
     left: 5%;
     border-color: navy;
@@ -97,7 +98,6 @@ th, td {
     border-color: crimson;
     border-style: solid;
     border-width: 2px;
-    width: 4.6vw;
     text-align: center;
     background-color: navy;
     color: white;

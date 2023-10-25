@@ -30,7 +30,7 @@
             </player-stats>
             <img class="player-photo" id="playerPhoto"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjL5uRukQxddVG8oeVQpPttaiZotrzgbf71xYUUvRjJTepPztXlK-aI5YMKoNacRmMIm4:https://mario.wiki.gallery/images/thumb/2/27/SuperMarioParty_Waluigi.png/640px-SuperMarioParty_Waluigi.png&usqp=CAU"></img>
-            <grade-display>0.0</grade-display>
+            <grade-display>00</grade-display>
         </div>
         <div>
             <!-- Graph/Table -->
@@ -39,31 +39,39 @@
             </div>
             <script>
                 const data = [
-                {x: 1, y: 1.0},
-                {x: 2, y: 1.5},
-                {x: 3, y: 1.0},
-                {x: 4, y: 1.0},
-                {x: 5, y: 1.5},
-                {x: 6, y: 1.0},
-                {x: 7, y: .5},
-                {x: 8, y: 1.5},
+                {x: 1, y: 70},
+                {x: 2, y: 72},
+                {x: 3, y: 68},
+                {x: 4, y: 80},
+                {x: 5, y: 58},
+                {x: 6, y: 86},
+                {x: 7, y: null},
+                {x: 8, y: 65},
+                {x: 9, y: 98},
+                {x: 10, y: 23},
+                {x: 11, y: 34},
+                {x: 12, y: 78},
                 ]
                 const crimsonLineGrade = [
-                    {y: 1.7},
-                    {y: 1.7},
-                    {y: 1.7},
-                    {y: 1.7},
-                    {y: 1.7},
-                    {y: 1.7},
-                    {y: 1.7},
-                    {y: 1.7}
+                    {x: 1, y: 90},
+                    {x: 2, y: 90},
+                    {x: 3, y: 90},
+                    {x: 4, y: 90},
+                    {x: 5, y: 90},
+                    {x: 6, y: 90},
+                    {x: 7, y: 90},
+                    {x: 8, y: 90},
+                    {x: 9, y: 90},
+                    {x: 10, y: 90},
+                    {x: 11, y: 90},
+                    {x: 12, y: 90},
                 ]
                 new Chart(
                     document.getElementById('studentGraph'),
                     {
                         type: 'line',
                         data: {
-                            labels: ['Freshman Sem 1', 'Freshman Sem 2', 'Sophmore Sem 1', 'Sophmore Sem 2', 'Junior Sem 1', 'Junior Sem 2', 'Senior Sem 2', 'Senior Sem 2'],
+                            labels: ['Fr 1', 'Fr 2', 'Fr 3', 'So 1', ' So 2', 'So 3', 'Ju 1', 'Ju 2', 'Ju 3', 'Se 1', 'Se 2', 'Se 3'],
                             datasets: [
                                 {
                                     label: 'Grade',
@@ -87,10 +95,10 @@
                             scales: {
                                 y: {
                                     type: 'linear',
-                                    suggestedMax: 2,
+                                    suggestedMax: 100,
                                     suggestedMin: 0,
                                     ticks: {
-                                        stepSize: 0.2
+                                        stepSize: 10
                                     },
                                 }
                             }
@@ -100,25 +108,33 @@
             <table>
                 <tr>
                     <th>Semester</th>
-                    <th>Freshman 1</th>
-                    <th>Freshman 2</th>
-                    <th>Sophmore 1</th>
-                    <th>Sophmore 2</th>
-                    <th>Junior 1</th>
-                    <th>Junior 2</th>
-                    <th>Senior 1</th>
-                    <th>Senior 2</th>
+                    <th>Fr 1</th>
+                    <th>Fr 2</th>
+                    <th>Fr 3</th>
+                    <th>So 1</th>
+                    <th>So 2</th>
+                    <th>So 3</th>
+                    <th>Ju 1</th>
+                    <th>Ju 2</th>
+                    <th>Ju 3</th>
+                    <th>Se 1</th>
+                    <th>Se 2</th>
+                    <th>Se 3</th>
                 </tr>
                 <tr>
                     <th>Grade</th>
-                    <td>1.0</td>
-                    <td>1.0</td>
-                    <td>1.0</td>
-                    <td>1.0</td>
-                    <td>1.0</td>
-                    <td>1.0</td>
-                    <td>1.0</td>
-                    <td>1.0</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>100</td>
                 </tr>
                 <!--Add more rows for more data.-->
             </table>
