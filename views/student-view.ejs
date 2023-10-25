@@ -66,6 +66,20 @@
                     {x: 11, y: 90},
                     {x: 12, y: 90},
                 ]
+                const averageJoeGrade = [
+                    {x: 1, y: 60},
+                    {x: 2, y: 61},
+                    {x: 3, y: 62},
+                    {x: 4, y: 63},
+                    {x: 5, y: 62},
+                    {x: 6, y: 63},
+                    {x: 7, y: 63},
+                    {x: 8, y: 64},
+                    {x: 9, y: 66},
+                    {x: 10, y: 67},
+                    {x: 11, y: 68},
+                    {x: 12, y: 70},
+                ]
                 new Chart(
                     document.getElementById('studentGraph'),
                     {
@@ -79,6 +93,13 @@
                                     fill: false,
                                     borderColor: 'rgb(0,0,128)',
                                     tension: 0.0,
+                                },
+                                {
+                                    label: 'Average Joe',
+                                    data: averageJoeGrade.map(row => row.y),
+                                    fill: false,
+                                    borderColor: 'rgb(0,128,0)',
+                                    tension: 0
                                 },
                                 {
                                     label: 'Crimson Line',
