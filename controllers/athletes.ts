@@ -19,7 +19,11 @@ export const getAthleteById = async(req: Request, res: Response, id: string) => 
     try {
         const athlete: IAthlete | null = await Athlete.findById({_id: id});
         const statistics: IStatistic[] | null = await Statistic.find({athlete_id: new mongoose.Types.ObjectId(id)});
-        res.status(200).json({ "athlete": athlete, "statistics": statistics });
+        console.log(statistics);
+        res.render('student-view.ejs', {
+            athlete: athlete,
+            statistics: statistics
+        });
     } catch(err) {
         console.error(err);
     }
