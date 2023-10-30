@@ -4,11 +4,11 @@ import routes from "./routes";
 import path from "path";
 
 const app: Express = express();
+app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "../views"));
 app.use(express.json());
 app.use(express.urlencoded());
-app.use(express.static("public"));
 app.use(routes);
 
 const PORT: string | number = process.env.PORT || 5000;
