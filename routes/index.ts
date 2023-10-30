@@ -8,7 +8,10 @@ router.use(athleteRoutes);
 router.use(statisticRoutes);
 
 router.get('/', (req, res) => {
-    res.render('student-view.ejs');
+    res.render('student-view.ejs', {
+        athlete: {},
+        statistics: {}
+    });
 });
 
 export default router;

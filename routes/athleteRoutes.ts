@@ -1,4 +1,4 @@
-import { Router } from "express";
+import express, { Router } from "express";
 import {getAthleteById, getAthletes} from "../controllers/athletes";
 
 const router: Router = Router();
