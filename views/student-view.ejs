@@ -13,20 +13,16 @@
             <!-- Player Info Area at the top of the window -->
             <player-name id="playerName"><%= athlete.first_name %> <%= athlete.last_name %></player-name>
             <player-stats>
-                <player-age>Age:</player-age><br />
                 <player-year>Year: </player-year><br />
                 <player-height>Height: </player-height><br />
                 <player-weight>Weight:</player-weight><br />
-                <player-number>Jersey Number:</player-number><br />
                 <player-position>Current Position:</player-position>
             </player-stats>
             <player-stats class="stat-value">
-                <player-age id="playerAge"><%= statistics.year %></player-age><br />
-                <player-year id="playerYear">Senior</player-year><br />
-                <player-height id="playerHeight">0' 0"</player-height><br />
-                <player-weight id="playerWeight">0 lbs</player-weight><br />
-                <player-number id="playerNumber">00</player-number><br />
-                <player-position id="playerPosition">Running Back</player-position>
+                <player-year id="playerYear"><%= statistics[statistics.length - 1].grade %></player-year><br />
+                <player-height id="playerHeight"><%= Math.floor(statistics[statistics.length - 1].height / 12) %>' <%= statistics[statistics.length - 1].height % 12 %>"</player-height><br />
+                <player-weight id="playerWeight"><%= statistics[statistics.length - 1].weight %> lbs</player-weight><br />
+                <player-position id="playerPosition"><%= statistics[statistics.length - 1].position %></player-position>
             </player-stats>
             <img class="player-photo" id="playerPhoto"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjL5uRukQxddVG8oeVQpPttaiZotrzgbf71xYUUvRjJTepPztXlK-aI5YMKoNacRmMIm4:https://mario.wiki.gallery/images/thumb/2/27/SuperMarioParty_Waluigi.png/640px-SuperMarioParty_Waluigi.png&usqp=CAU"></img>
