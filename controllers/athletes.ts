@@ -27,8 +27,10 @@ export const getAthleteById = async(req: Request, res: Response, id: string) => 
                 return -1;
             }
 
-            const month_a: number = a.month ?? -1;
-            const month_b: number = b.month ?? -1;
+            const shift: 5 = 5;
+
+            const month_a: number = ((a.month ?? -1) + shift) % 12;
+            const month_b: number = ((b.month ?? -1) + shift) % 12;
 
             if (month_a >= month_b) {
                 return 1;
