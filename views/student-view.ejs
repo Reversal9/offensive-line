@@ -16,7 +16,7 @@
                     <%= athlete.last_name %>
             </player-name>
             <player-stats>
-                <player-year>Year: </player-year><br />
+                <player-year>Grade: </player-year><br />
                 <player-height>Height: </player-height><br />
                 <player-weight>Weight:</player-weight><br />
                 <player-position>Current Position:</player-position>
@@ -45,17 +45,6 @@
                 <canvas id="studentGraph"></canvas>
             </div>
             <script>
-                let tableOrderStats = [12];
-                if (statistics.length == 12) { tableOrderStats = statistics }
-                else {
-                    statistics.forEach(stat => {
-                        let a = 0;
-                        if (stat.month >= 7) {a = 0;}
-                        else if (stat.month <= 4) {a = 1;}
-                        else if (stat.month >= 5) {a = 2;}
-                        tableOrderStats[((stat.grade - 9) * 3) + a] = stat;
-                    });
-                }
 
                 const data = [
                     { x: 1, y: 1 },
@@ -114,7 +103,7 @@
                                     tension: 0.0,
                                 },
                                 {
-                                    label: 'Average Joe',
+                                    label: 'Average',
                                     data: averageJoeGrade.map(row => row.y),
                                     fill: false,
                                     borderColor: 'rgb(0,128,0)',
@@ -147,7 +136,7 @@
             </script>
             <table>
                 <tr>
-                    <th>Semester</th>
+                    <th>Trimester</th>
                     <th>Fr 1</th>
                     <th>Fr 2</th>
                     <th>Fr 3</th>
@@ -162,22 +151,112 @@
                     <th>Se 3</th>
                 </tr>
                 <tr>
-                    <th>Grade</th>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>100</td>
+                    <th>Height</th>
+                    <td><%= tableOrderStats[0].height %></td>
+                    <td><%= tableOrderStats[1].height %></td>
+                    <td><%= tableOrderStats[2].height %></td>
+                    <td><%= tableOrderStats[3].height %></td>
+                    <td><%= tableOrderStats[4].height %></td>
+                    <td><%= tableOrderStats[5].height %></td>
+                    <td><%= tableOrderStats[6].height %></td>
+                    <td><%= tableOrderStats[7].height %></td>
+                    <td><%= tableOrderStats[8].height %></td>
+                    <td><%= tableOrderStats[9].height %></td>
+                    <td><%= tableOrderStats[10].height %></td>
+                    <td><%= tableOrderStats[11].height %></td>
                 </tr>
-                <!--Add more rows for more data.-->
-            </table>
+                <tr>
+                    <th>Weight</th>
+                    <td><%= tableOrderStats[0].weight %></td>
+                    <td><%= tableOrderStats[1].weight %></td>
+                    <td><%= tableOrderStats[2].weight %></td>
+                    <td><%= tableOrderStats[3].weight %></td>
+                    <td><%= tableOrderStats[4].weight %></td>
+                    <td><%= tableOrderStats[5].weight %></td>
+                    <td><%= tableOrderStats[6].weight %></td>
+                    <td><%= tableOrderStats[7].weight %></td>
+                    <td><%= tableOrderStats[8].weight %></td>
+                    <td><%= tableOrderStats[9].weight %></td>
+                    <td><%= tableOrderStats[10].weight %></td>
+                    <td><%= tableOrderStats[11].weight %></td>
+                </tr>
+                <tr>
+                    <th>Bench</th>
+                    <td><%= tableOrderStats[0].bench %></td>
+                    <td><%= tableOrderStats[1].bench %></td>
+                    <td><%= tableOrderStats[2].bench %></td>
+                    <td><%= tableOrderStats[3].bench %></td>
+                    <td><%= tableOrderStats[4].bench %></td>
+                    <td><%= tableOrderStats[5].bench %></td>
+                    <td><%= tableOrderStats[6].bench %></td>
+                    <td><%= tableOrderStats[7].bench %></td>
+                    <td><%= tableOrderStats[8].bench %></td>
+                    <td><%= tableOrderStats[9].bench %></td>
+                    <td><%= tableOrderStats[10].bench %></td>
+                    <td><%= tableOrderStats[11].bench %></td>
+                </tr>
+                <tr>
+                    <th>Squat</th>
+                    <td><%= tableOrderStats[0].squat %></td>
+                    <td><%= tableOrderStats[1].squat %></td>
+                    <td><%= tableOrderStats[2].squat %></td>
+                    <td><%= tableOrderStats[3].squat %></td>
+                    <td><%= tableOrderStats[4].squat %></td>
+                    <td><%= tableOrderStats[5].squat %></td>
+                    <td><%= tableOrderStats[6].squat %></td>
+                    <td><%= tableOrderStats[7].squat %></td>
+                    <td><%= tableOrderStats[8].squat %></td>
+                    <td><%= tableOrderStats[9].squat %></td>
+                    <td><%= tableOrderStats[10].squat %></td>
+                    <td><%= tableOrderStats[11].squat %></td>
+                </tr>
+                <tr>
+                    <th>Clean</th>
+                    <td><%= tableOrderStats[0].clean %></td>
+                    <td><%= tableOrderStats[1].clean %></td>
+                    <td><%= tableOrderStats[2].clean %></td>
+                    <td><%= tableOrderStats[3].clean %></td>
+                    <td><%= tableOrderStats[4].clean %></td>
+                    <td><%= tableOrderStats[5].clean %></td>
+                    <td><%= tableOrderStats[6].clean %></td>
+                    <td><%= tableOrderStats[7].clean %></td>
+                    <td><%= tableOrderStats[8].clean %></td>
+                    <td><%= tableOrderStats[9].clean %></td>
+                    <td><%= tableOrderStats[10].clean %></td>
+                    <td><%= tableOrderStats[11].clean %></td>
+                </tr>
+                <tr>
+                    <th>Vertical</th>
+                    <td><%= tableOrderStats[0].vertical %></td>
+                    <td><%= tableOrderStats[1].vertical %></td>
+                    <td><%= tableOrderStats[2].vertical %></td>
+                    <td><%= tableOrderStats[3].vertical %></td>
+                    <td><%= tableOrderStats[4].vertical %></td>
+                    <td><%= tableOrderStats[5].vertical %></td>
+                    <td><%= tableOrderStats[6].vertical %></td>
+                    <td><%= tableOrderStats[7].vertical %></td>
+                    <td><%= tableOrderStats[8].vertical %></td>
+                    <td><%= tableOrderStats[9].vertical %></td>
+                    <td><%= tableOrderStats[10].vertical %></td>
+                    <td><%= tableOrderStats[11].vertical %></td>
+                </tr>
+                <tr>
+                    <th>Forty</th>
+                    <td><%= tableOrderStats[0].forty_average %></td>
+                    <td><%= tableOrderStats[1].forty_average %></td>
+                    <td><%= tableOrderStats[2].forty_average %></td>
+                    <td><%= tableOrderStats[3].forty_average %></td>
+                    <td><%= tableOrderStats[4].forty_average %></td>
+                    <td><%= tableOrderStats[5].forty_average %></td>
+                    <td><%= tableOrderStats[6].forty_average %></td>
+                    <td><%= tableOrderStats[7].forty_average %></td>
+                    <td><%= tableOrderStats[8].forty_average %></td>
+                    <td><%= tableOrderStats[9].forty_average %></td>
+                    <td><%= tableOrderStats[10].forty_average %></td>
+                    <td><%= tableOrderStats[11].forty_average %></td>
+                </tr>
+                <!--Add more rows for more data.
+            </table>-->
         </div>
     </interior-body>
 </body>

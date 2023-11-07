@@ -45,9 +45,28 @@ export const getAthleteById = async(req: Request, res: Response, id: string) => 
             console.log(a.year + " " + a.month)
         }
 
+        let tableOrderStats = new Array(12);
+        if (statistics.length == 12) { tableOrderStats = statistics }
+        else {
+            statistics.forEach(stat => {
+                let a = 0;
+                if (stat.month != undefined && stat.month >= 7) { a = 0; }
+                else if (stat.month != undefined && stat.month <= 4) { a = 1; }
+                else if (stat.month != undefined && stat.month >= 5) { a = 2; }
+                if (stat.grade != undefined) {
+                    tableOrderStats[((stat.grade - 9) * 3) + a] = stat;
+                }
+            });
+            for (let i = 0; i < 12; i++) {
+                if (tableOrderStats[i] == null) {
+                    tableOrderStats[i] = {};
+                }
+            }
+        }
         res.render('student-view.ejs', {
             athlete: athlete,
-            statistics: statistics
+            statistics: statistics,
+            tableOrderStats: tableOrderStats
         });
     } catch(err) {
         console.error(err);
