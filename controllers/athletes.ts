@@ -14,6 +14,17 @@ export const getAthletes = async(req: Request, res: Response) => {
     }
 };
 
+export const getAthletesAsCoach = async(req: Request, res: Response) => {
+    try {
+        let athletes: IAthlete[] = await Athlete.find();
+        res.render('coach-view.ejs', {
+            athletes: athletes,
+        })
+    } catch(err) {
+        console.error(err);
+    }
+};
+
 export const getAthleteById = async(req: Request, res: Response, id: string) => {
     try {
         const athlete: IAthlete | null = await Athlete.findById({_id: id});
