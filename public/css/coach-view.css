@@ -1,0 +1,36 @@
+body {
+    background-color: crimson;
+}
+
+interior-body {
+    background-color: white;
+    height: 150vh;
+    width: 75vw;
+    position: absolute;
+    top: 5vh;
+    left: 12.5vw;
+    font-family: "Lato Extended", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-color:navy;
+    border-width: 10px;
+    border-style: solid;
+}
+
+table {
+    position: absolute;
+    width: 80%;
+    top: 75%;
+    left: 5%;
+    border-color: navy;
+    border-style: solid;
+    border-width: 2px;
+}
+
+th, td {
+    border-color: crimson;
+    border-style: solid;
+    border-width: 2px;
+    text-align: center;
+    background-color: navy;
+    color: white;
+    font-size: small;
+}
