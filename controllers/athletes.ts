@@ -4,6 +4,7 @@ import Athlete from "../models/athlete";
 import mongoose from "mongoose";
 import {IStatistic} from "../types/statistic";
 import Statistic from "../models/statistic";
+import { table } from "console";
 
 export const getAthletes = async(req: Request, res: Response) => {
     try {
@@ -64,7 +65,7 @@ export const getAthletesAsCoach = async(req: Request, res: Response) => {
 
             coachAthleteData[i] = {
                 athletes: athletes[i], 
-                statistics: statistics
+                statistics: tableOrderStats
             }
         }
 
