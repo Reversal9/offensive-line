@@ -119,7 +119,10 @@ const statisticSchema: Schema = new Schema(
             type: Boolean,
             required: false
         },
-
+        athlete_id: {
+            type: String,
+            required: true
+        },
     },
     {
         timestamps: true

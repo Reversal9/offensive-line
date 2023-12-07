@@ -29,5 +29,6 @@ export interface IStatistic extends Document {
     thirty_to_forty?: number,
     elite?: boolean,
     player_height_score?: number,
-    active?: boolean
+    active?: boolean,
+    athlete_id: string
 }
