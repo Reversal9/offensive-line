@@ -79,7 +79,7 @@ export const getAthletesAsCoach = async(req: Request, res: Response) => {
 
 export const getAthleteById = async(req: Request, res: Response, id: string) => {
     try {
-        const athlete: IAthlete | null = await Athlete.findById({_id: id});
+        const athlete: IAthlete | null = await Athlete.findById({_id: new mongoose.Types.ObjectId(id)});
         const statistics: IStatistic[] | null = await Statistic.find({athlete_id: new mongoose.Types.ObjectId(id)});
         statistics?.sort((a: IStatistic, b: IStatistic): number => {
             const year_a: number = parseInt(a.year?.split("-")[0] ?? "-1");
