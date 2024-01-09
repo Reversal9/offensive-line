@@ -20,7 +20,7 @@ export const getAthletesAsCoach = async(req: Request, res: Response) => {
         let athletes: IAthlete[] = await Athlete.find();
         let coachAthleteData = new Array(athletes.length);
         for (let i = 0; i < athletes.length; i++) {
-            let statistics: IStatistic[] | null = await Statistic.find({athlete_id: new mongoose.Types.ObjectId(athletes[i]._id)});
+            let statistics: IStatistic[] | null = await Statistic.find({athlete_id: athletes[i]._id});
             statistics?.sort((a: IStatistic, b: IStatistic): number => {
                 const year_a: number = parseInt(a.year?.split("-")[0] ?? "-1");
                 const year_b: number = parseInt(b.year?.split("-")[0] ?? "-1");
@@ -79,8 +79,8 @@ export const getAthletesAsCoach = async(req: Request, res: Response) => {
 
 export const getAthleteById = async(req: Request, res: Response, id: string) => {
     try {
-        const athlete: IAthlete | null = await Athlete.findById({_id: new mongoose.Types.ObjectId(id)});
-        const statistics: IStatistic[] | null = await Statistic.find({athlete_id: new mongoose.Types.ObjectId(id)});
+        const athlete: IAthlete | null = await Athlete.findById({_id: id});
+        const statistics: IStatistic[] | null = await Statistic.find({athlete_id: id});
         statistics?.sort((a: IStatistic, b: IStatistic): number => {
             const year_a: number = parseInt(a.year?.split("-")[0] ?? "-1");
             const year_b: number = parseInt(b.year?.split("-")[0] ?? "-1");
