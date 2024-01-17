@@ -4,6 +4,8 @@ import Athlete from "../models/athlete";
 import mongoose from "mongoose";
 import {IStatistic} from "../types/statistic";
 import Statistic from "../models/statistic";
+import {IEvent} from "../types/event";
+import Event from "../models/event";
 import { table } from "console";
 
 export const getAthletes = async(req: Request, res: Response) => {
@@ -126,12 +128,16 @@ export const getAthleteById = async(req: Request, res: Response, id: string) => 
                 }
             }
         }
+        const events: IEvent[] | null = await Event.find({athlete_id: id});
+
         res.render('student-view.ejs', {
             athlete: athlete,
             statistics: statistics,
+            events: events,
             tableOrderStats: tableOrderStats
         });
     } catch(err) {
         console.error(err);
     }
+
 };
