@@ -4,7 +4,7 @@ import { model, Schema } from "mongoose";
 const eventSchema: Schema = new Schema(
     {
         score: {
-            type: String,
+            type: number,
             required: true
         }
     },
