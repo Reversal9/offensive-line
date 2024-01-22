@@ -3,7 +3,7 @@ import { model, Schema } from "mongoose";
 
 const eventSchema: Schema = new Schema(
     {
-        event_name: {
+        score: {
             type: String,
             required: true
         }
