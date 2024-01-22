@@ -44,10 +44,9 @@
             <div class="student-graph">
                 <canvas id="studentGraph"></canvas>
             </div>
-            <!-- Code for graph. Will not be used because data doesnt include time 
             <script>
 
-                var statistics = '<%- JSON.stringify(statistics) %>';
+                var statistics = '<%- JSON.stringify(tableOrderStats) %>';
 
                 const crimsonLineGrade = [
                     { x: 1, y: 1.5 },
@@ -85,12 +84,13 @@
                             labels: ['Fr 1', 'Fr 2', 'Fr 3', 'So 1', ' So 2', 'So 3', 'Ju 1', 'Ju 2', 'Ju 3', 'Se 1', 'Se 2', 'Se 3'],
                             datasets: [
                                 {
-                                    label: 'Grade',
-                                    data: JSON.parse(statistics).map(row => row.score),
+                                    label: 'Height',
+                                    data: JSON.parse(statistics).map(row => row.height),
                                     fill: false,
                                     borderColor: 'rgb(0,0,128)',
                                     tension: 0.0,
                                 },
+                                /*
                                 {
                                     label: 'Average',
                                     data: averageJoeGrade.map(row => row.y),
@@ -106,6 +106,7 @@
                                     tension: 0
                                 }
                                 //Add more datasets for more data
+                                */
                             ]
                         },
                         options: {
@@ -113,17 +114,17 @@
                             scales: {
                                 y: {
                                     type: 'linear',
-                                    suggestedMax: 2,
+                                    suggestedMax: 84,
                                     suggestedMin: 0,
                                     ticks: {
-                                        stepSize: .2
+                                        stepSize: 5
                                     },
                                 }
                             }
                         }
                     });
             </script>
-        -->
+
             <table>
                 <tr>
                     <th>Trimester</th>
