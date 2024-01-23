@@ -41,13 +41,14 @@
         </div>
         <div>
             <!-- Graph/Table -->
-            <button id="heightButton">Height</button><button id="weightButton">Weight</button>
-            <div class="student-graph">
-                <canvas id="studentHeightGraph" onclick="selectHeight()"></canvas>
+            
+            <button id="heightButton" onclick="selectHeight()">Height</button><button id="weightButton" onclick="selectWeight()">Weight</button>
+            <div class="student-graph" id="heightGraph">
+                <canvas id="studentHeightGraph" ></canvas>
             </div>
 
-            <div class="student-graph">
-                <canvas id="studentWeightGraph" onclick="selectWeight()"></canvas>
+            <div class="student-graph" id="weightGraph" hidden>
+                <canvas id="studentWeightGraph" ></canvas>
             </div>
             <script>
 
@@ -117,12 +118,12 @@
             </script>
             <script>
                 function selectHeight() {
-                    document.getElementById("heightButton").hidden = false;
-                    document.getElementById("weightButton").hidden = true;
+                    document.getElementById("heightGraph").hidden = false;
+                    document.getElementById("weightGraph").hidden = true;
                 }
                 function selectWeight() {
-                    document.getElementById("heightButton").hidden = true;
-                    document.getElementById("weightButton").hidden = false;
+                    document.getElementById("heightGraph").hidden = true;
+                    document.getElementById("weightGraph").hidden = false;
                 }
             </script>
 
