@@ -41,43 +41,20 @@
         </div>
         <div>
             <!-- Graph/Table -->
+            <button id="height">Height</button><button id="weight">Weight</button>
             <div class="student-graph">
-                <canvas id="studentGraph"></canvas>
+                <canvas id="studentHeightGraph" onclick="selectHeight()"></canvas>
+            </div>
+
+            <div class="student-graph">
+                <canvas id="studentWeightGraph" onclick="selectWeight()"></canvas>
             </div>
             <script>
 
                 var statistics = '<%- JSON.stringify(tableOrderStats) %>';
 
-                const crimsonLineGrade = [
-                    { x: 1, y: 1.5 },
-                    { x: 2, y: 1.5 },
-                    { x: 3, y: 1.5 },
-                    { x: 4, y: 1.5 },
-                    { x: 5, y: 1.5 },
-                    { x: 6, y: 1.5 },
-                    { x: 7, y: 1.5 },
-                    { x: 8, y: 1.5 },
-                    { x: 9, y: 1.5 },
-                    { x: 10, y: 1.5 },
-                    { x: 11, y: 1.5 },
-                    { x: 12, y: 1.5 },
-                ]
-                const averageJoeGrade = [
-                    { x: 1, y: 1 },
-                    { x: 2, y: 1 },
-                    { x: 3, y: 1 },
-                    { x: 4, y: 1 },
-                    { x: 5, y: 1 },
-                    { x: 6, y: 1 },
-                    { x: 7, y: 1 },
-                    { x: 8, y: 1 },
-                    { x: 9, y: 1 },
-                    { x: 10, y: 1 },
-                    { x: 11, y: 1 },
-                    { x: 12, y: 1 },
-                ]
                 new Chart(
-                    document.getElementById('studentGraph'),
+                    document.getElementById('studentHeightGraph'),
                     {
                         type: 'line',
                         data: {
@@ -89,24 +66,7 @@
                                     fill: false,
                                     borderColor: 'rgb(0,0,128)',
                                     tension: 0.0,
-                                },
-                                /*
-                                {
-                                    label: 'Average',
-                                    data: averageJoeGrade.map(row => row.y),
-                                    fill: false,
-                                    borderColor: 'rgb(0,128,0)',
-                                    tension: 0
-                                },
-                                {
-                                    label: 'Crimson Line',
-                                    data: crimsonLineGrade.map(row => row.y),
-                                    fill: false,
-                                    borderColor: 'rgb(220,20,60)',
-                                    tension: 0
                                 }
-                                //Add more datasets for more data
-                                */
                             ]
                         },
                         options: {
@@ -114,8 +74,39 @@
                             scales: {
                                 y: {
                                     type: 'linear',
-                                    suggestedMax: 84,
-                                    suggestedMin: 0,
+                                    suggestedMax: 90,
+                                    suggestedMin: 36,
+                                    ticks: {
+                                        stepSize: 5
+                                    },
+                                }
+                            }
+                        }
+                    });
+
+                    new Chart(
+                    document.getElementById('studentWeightGraph'),
+                    {
+                        type: 'line',
+                        data: {
+                            labels: ['Fr 1', 'Fr 2', 'Fr 3', 'So 1', ' So 2', 'So 3', 'Ju 1', 'Ju 2', 'Ju 3', 'Se 1', 'Se 2', 'Se 3'],
+                            datasets: [
+                                {
+                                    label: 'Weight',
+                                    data: JSON.parse(statistics).map(row => row.weight),
+                                    fill: false,
+                                    borderColor: 'rgb(0,0,128)',
+                                    tension: 0.0,
+                                }
+                            ]
+                        },
+                        options: {
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    type: 'linear',
+                                    suggestedMax: 400,
+                                    suggestedMin: 50,
                                     ticks: {
                                         stepSize: 5
                                     },
