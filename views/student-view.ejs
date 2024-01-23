@@ -41,7 +41,7 @@
         </div>
         <div>
             <!-- Graph/Table -->
-            <button id="height">Height</button><button id="weight">Weight</button>
+            <button id="heightButton">Height</button><button id="weightButton">Weight</button>
             <div class="student-graph">
                 <canvas id="studentHeightGraph" onclick="selectHeight()"></canvas>
             </div>
@@ -114,6 +114,16 @@
                             }
                         }
                     });
+            </script>
+            <script>
+                function selectHeight() {
+                    document.getElementById("heightButton").hidden = false;
+                    document.getElementById("weightButton").hidden = true;
+                }
+                function selectWeight() {
+                    document.getElementById("heightButton").hidden = true;
+                    document.getElementById("weightButton").hidden = false;
+                }
             </script>
 
             <table>
