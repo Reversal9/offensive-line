@@ -103,3 +103,10 @@ th, td {
     color: white;
     font-size: small;
 }
+.graphButton {
+    border-color: navy;
+    border-style: solid;
+    border-width: 5px;
+    color: crimson;
+    
+}
