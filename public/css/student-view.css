@@ -104,9 +104,15 @@ th, td {
     font-size: small;
 }
 .graphButton {
+    position: absolute;
     border-color: navy;
     border-style: solid;
     border-width: 5px;
     color: crimson;
-    
+    top:67.5vh;
+    width: 10vh;
+    height: 3vh;
+}
+.graphButton:hover {
+    background-color: lightgray;
 }

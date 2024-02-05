@@ -42,15 +42,33 @@
         <div>
             <!-- Graph/Table -->
             
-            <button id="heightButton" class="graphButton" onclick="selectHeight()">Height</button>
-            <button id="weightButton" class="graphButton" onclick="selectWeight()">Weight</button>
-            
+            <button id="heightButton" class="graphButton" style="left:5vh" onclick="selectHeight()">Height</button>
+            <button id="weightButton" class="graphButton" style="left:15vh"onclick="selectWeight()">Weight</button>
+            <button id="benchButton" class="graphButton" style="left:25vh"onclick="selectBench()">Bench</button>
+            <button id="squatButton" class="graphButton" style="left:35vh"onclick="selectSquat()">Squat</button>
+            <button id="cleanButton" class="graphButton" style="left:45vh"onclick="selectClean()">Clean</button>
+            <button id="verticalButton" class="graphButton" style="left:55vh"onclick="selectVertical()">Vertical</button>
+            <button id="fortyButton" class="graphButton" style="left:65vh"onclick="selectForty()">Forty</button>            
             <div class="student-graph" id="heightGraph">
                 <canvas id="studentHeightGraph" ></canvas>
             </div>
-
             <div class="student-graph" id="weightGraph" hidden>
                 <canvas id="studentWeightGraph" ></canvas>
+            </div>
+            <div class="student-graph" id="benchGraph" hidden>
+                <canvas id="studentBenchGraph" ></canvas>
+            </div>
+            <div class="student-graph" id="squatGraph" hidden>
+                <canvas id="studentSquatGraph" ></canvas>
+            </div>
+            <div class="student-graph" id="cleanGraph" hidden>
+                <canvas id="studentCleanGraph" ></canvas>
+            </div>
+            <div class="student-graph" id="verticalGraph" hidden>
+                <canvas id="studentVerticalGraph" ></canvas>
+            </div>
+            <div class="student-graph" id="fortyGraph" hidden>
+                <canvas id="studentFortyGraph" ></canvas>
             </div>
             <script>
 
@@ -117,15 +135,220 @@
                             }
                         }
                     });
+                    new Chart(
+                    document.getElementById('studentBenchGraph'),
+                    {
+                        type: 'line',
+                        data: {
+                            labels: ['Fr 1', 'Fr 2', 'Fr 3', 'So 1', ' So 2', 'So 3', 'Ju 1', 'Ju 2', 'Ju 3', 'Se 1', 'Se 2', 'Se 3'],
+                            datasets: [
+                                {
+                                    label: 'Bench',
+                                    data: JSON.parse(statistics).map(row => row.bench),
+                                    fill: false,
+                                    borderColor: 'rgb(0,0,128)',
+                                    tension: 0.0,
+                                }
+                            ]
+                        },
+                        options: {
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    type: 'linear',
+                                    suggestedMax: 400,
+                                    suggestedMin: 50,
+                                    ticks: {
+                                        stepSize: 5
+                                    },
+                                }
+                            }
+                        }
+                    });
+                    new Chart(
+                    document.getElementById('studentSquatGraph'),
+                    {
+                        type: 'line',
+                        data: {
+                            labels: ['Fr 1', 'Fr 2', 'Fr 3', 'So 1', ' So 2', 'So 3', 'Ju 1', 'Ju 2', 'Ju 3', 'Se 1', 'Se 2', 'Se 3'],
+                            datasets: [
+                                {
+                                    label: 'Squat',
+                                    data: JSON.parse(statistics).map(row => row.squat),
+                                    fill: false,
+                                    borderColor: 'rgb(0,0,128)',
+                                    tension: 0.0,
+                                }
+                            ]
+                        },
+                        options: {
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    type: 'linear',
+                                    suggestedMax: 400,
+                                    suggestedMin: 50,
+                                    ticks: {
+                                        stepSize: 5
+                                    },
+                                }
+                            }
+                        }
+                    });
+                    new Chart(
+                    document.getElementById('studentCleanGraph'),
+                    {
+                        type: 'line',
+                        data: {
+                            labels: ['Fr 1', 'Fr 2', 'Fr 3', 'So 1', ' So 2', 'So 3', 'Ju 1', 'Ju 2', 'Ju 3', 'Se 1', 'Se 2', 'Se 3'],
+                            datasets: [
+                                {
+                                    label: 'Clean',
+                                    data: JSON.parse(statistics).map(row => row.clean),
+                                    fill: false,
+                                    borderColor: 'rgb(0,0,128)',
+                                    tension: 0.0,
+                                }
+                            ]
+                        },
+                        options: {
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    type: 'linear',
+                                    suggestedMax: 400,
+                                    suggestedMin: 50,
+                                    ticks: {
+                                        stepSize: 5
+                                    },
+                                }
+                            }
+                        }
+                    });
+                    new Chart(
+                    document.getElementById('studentVerticalGraph'),
+                    {
+                        type: 'line',
+                        data: {
+                            labels: ['Fr 1', 'Fr 2', 'Fr 3', 'So 1', ' So 2', 'So 3', 'Ju 1', 'Ju 2', 'Ju 3', 'Se 1', 'Se 2', 'Se 3'],
+                            datasets: [
+                                {
+                                    label: 'Vertical',
+                                    data: JSON.parse(statistics).map(row => row.vertical),
+                                    fill: false,
+                                    borderColor: 'rgb(0,0,128)',
+                                    tension: 0.0,
+                                }
+                            ]
+                        },
+                        options: {
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    type: 'linear',
+                                    suggestedMax: 60,
+                                    suggestedMin: 0,
+                                    ticks: {
+                                        stepSize: 5
+                                    },
+                                }
+                            }
+                        }
+                    });
+                    new Chart(
+                    document.getElementById('studentFortyGraph'),
+                    {
+                        type: 'line',
+                        data: {
+                            labels: ['Fr 1', 'Fr 2', 'Fr 3', 'So 1', ' So 2', 'So 3', 'Ju 1', 'Ju 2', 'Ju 3', 'Se 1', 'Se 2', 'Se 3'],
+                            datasets: [
+                                {
+                                    label: 'Forty',
+                                    data: JSON.parse(statistics).map(row => row.forty_average),
+                                    fill: false,
+                                    borderColor: 'rgb(0,0,128)',
+                                    tension: 0.0,
+                                }
+                            ]
+                        },
+                        options: {
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    type: 'linear',
+                                    suggestedMax: 10,
+                                    suggestedMin: 0,
+                                    ticks: {
+                                        stepSize: 5
+                                    },
+                                }
+                            }
+                        }
+                    });
             </script>
             <script>
                 function selectHeight() {
                     document.getElementById("heightGraph").hidden = false;
                     document.getElementById("weightGraph").hidden = true;
+                    document.getElementById("benchGraph").hidden = true;
+                    document.getElementById("squatGraph").hidden = true;
+                    document.getElementById("cleanGraph").hidden = true;
+                    document.getElementById("verticalGraph").hidden = true;
+                    document.getElementById("fortyGraph").hidden = true;
                 }
                 function selectWeight() {
                     document.getElementById("heightGraph").hidden = true;
                     document.getElementById("weightGraph").hidden = false;
+                    document.getElementById("benchGraph").hidden = true;
+                    document.getElementById("squatGraph").hidden = true;
+                    document.getElementById("cleanGraph").hidden = true;
+                    document.getElementById("verticalGraph").hidden = true;
+                    document.getElementById("fortyGraph").hidden = true;
+                }
+                function selectBench() {
+                    document.getElementById("heightGraph").hidden = true;
+                    document.getElementById("weightGraph").hidden = true;
+                    document.getElementById("benchGraph").hidden = false;
+                    document.getElementById("squatGraph").hidden = true;
+                    document.getElementById("cleanGraph").hidden = true;
+                    document.getElementById("verticalGraph").hidden = true;
+                    document.getElementById("fortyGraph").hidden = true;
+                }
+                function selectSquat() {
+                    document.getElementById("heightGraph").hidden = true;
+                    document.getElementById("weightGraph").hidden = true;
+                    document.getElementById("benchGraph").hidden = true;
+                    document.getElementById("squatGraph").hidden = false;
+                    document.getElementById("cleanGraph").hidden = true;
+                    document.getElementById("verticalGraph").hidden = true;
+                    document.getElementById("fortyGraph").hidden = true;
+                }
+                function selectClean() {
+                    document.getElementById("heightGraph").hidden = true;
+                    document.getElementById("weightGraph").hidden = true;
+                    document.getElementById("benchGraph").hidden = true;
+                    document.getElementById("squatGraph").hidden = true;
+                    document.getElementById("cleanGraph").hidden = false;
+                    document.getElementById("verticalGraph").hidden = true;
+                    document.getElementById("fortyGraph").hidden = true;
+                }
+                function selectVertical() {
+                    document.getElementById("heightGraph").hidden = true;
+                    document.getElementById("weightGraph").hidden = true;
+                    document.getElementById("benchGraph").hidden = true;
+                    document.getElementById("squatGraph").hidden = true;
+                    document.getElementById("cleanGraph").hidden = true;
+                    document.getElementById("verticalGraph").hidden = false;
+                    document.getElementById("fortyGraph").hidden = true;
+                }
+                function selectForty() {
+                    document.getElementById("heightGraph").hidden = true;
+                    document.getElementById("weightGraph").hidden = true;
+                    document.getElementById("benchGraph").hidden = true;
+                    document.getElementById("squatGraph").hidden = true;
+                    document.getElementById("cleanGraph").hidden = true;
+                    document.getElementById("verticalGraph").hidden = true;
+                    document.getElementById("fortyGraph").hidden = false;
                 }
             </script>
 
