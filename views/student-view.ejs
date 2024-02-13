@@ -37,7 +37,17 @@
             </player-stats>
             <img class="player-photo" id="playerPhoto"
                 src="https://i1.sndcdn.com/artworks-1whJw3RMJ1bZhIZT-zxLY0A-t500x500.jpg"></img>
-            <grade-display>0.0</grade-display>
+            <grade-display id="gradeDisplay">0.0</grade-display>
+            <script>
+                let events = JSON.parse('<%- JSON.stringify(events) %>');
+                let y = 0;
+                let z = 0;
+                for (x = events.length - 1; x >= events.length - 50 && x >= 0; x--) {
+                    y++;
+                    z = z + events[x].score;
+                }
+                document.getElementById("gradeDisplay").innerHTML = Math.round((z / y) * 10) / 10;
+            </script>
         </div>
         <div>
             <!-- Graph/Table -->
