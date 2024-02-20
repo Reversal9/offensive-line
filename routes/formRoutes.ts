@@ -11,6 +11,6 @@ router.get('/form', (req, res) => {
 
 router.get('/form/:id', editStatistic);
 
-router.post('/editform', updateStatistic);
+router.post('/form/editform', updateStatistic);
 
 export default router;
