@@ -9,8 +9,12 @@ router.get('/form', (req, res) => {
     res.render('forms-view.ejs')
 });
 
+
 router.get('/form/:id', editStatistic);
 
 router.post('/form/editform', updateStatistic);
+
+
+
 
 export default router;
