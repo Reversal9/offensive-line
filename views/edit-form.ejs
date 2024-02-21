@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/student-view.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Offensive Line - 595</title>
+</head>
+
+<!-- <script>
+    var form = document.getElementById("formff");
+
+    if (form != null) {
+        form.addEventListener("click", function(event){
+            event.preventDefault()
+        });
+
+        form.addEventListener("submit", edit, true);
+    }
+
+    const edit = function(event) {
+        event.preventDefault();
+        alert("deez nut");
+        console.log(event)
+        console.log("pressed my poop")
+        var statistic = {};
+        const inputs = document.getElementById("form").elements;
+        for (var i = 0; i < inputs.length; i++) {
+            const name = input[i];
+            const value = input[i].value;
+            statistic[name] = value;
+
+            console.log(name);
+        }
+
+        const res = fetch("/statistics", {
+            method: "PUT",
+            body: statistic
+        });
+
+        console.log(res);
+        alert("done");
+    }
+</script> -->
+
+<body>
+    <interior-body>
+        
+        <!--forms page to add data-->
+        <div>
+            
+            
+            <%= statistic.month %> <br>
+            <form id="formff" method="post" action="/form/editform">
+                
+                <label for = "month">Month: </label>
+                <input type= "number" id = "month" name = "month" value = <%= statistic.month %> > <br>
+    
+                <label for = "year">Year: </label>
+                <input type="text" id = "year" name = "year" value = <%= statistic.year %> > <br>
+    
+                <label for = "position">Position: </label>
+                <input type="text" id = "position" name = "position" value = <%= statistic.position %> > <br>
+    
+                <label for = "grade">Grade: </label>
+                <input type="number" id = "grade" name = "grade" value = <%= statistic.grade %> > <br>
+    
+                <label for = "height">Height: </label>
+                <input type="number" id = "height" name = "height" value = <%= statistic.height %> > <br>
+    
+                <label for = "weight">Weight: </label>
+                <input type="number" id = "weight" name = "weight" value = <%= statistic.weight %>> <br>
+
+                <label for = "squat">Squat: </label>
+                <input type="number" id = "squat" name = "squat" value = <%= statistic.squat %>> <br>
+    
+                <label for = "bench">Bench: </label>
+                <input type="number" id = "bench" name = "bench" value = <%= statistic.bench %>> <br>
+    
+                <label for = "bench_squat">Bench_Squat: </label>
+                <input type="number" id = "bench_squat" name = "bench_squat" value = <%= statistic.bench_squat %>> <br>
+    
+                <label for = "total">Total: </label>
+                <input type="number" id = "total" name = "total" value = <%= statistic.total %>> <br>
+    
+                <label for = "vertical">Vertical: </label>
+                <input type="number" id = "vertical" name = "vertical" value = <%= statistic.vertical %>> <br>
+    
+                <label for = "pro_average">Pro_average: </label>
+                <input type="number" id = "pro_average"  name = "pro_average" value = <%= statistic.pro_average %>> <br>
+    
+                <label for = "group">Group: </label>
+                <input type="text" id = "group" name = "group" value = <%= statistic.group %>> <br>
+    
+                <label for = "elite">Elite: </label>
+                <input type="checkbox" id = "elite"  name = "elite" post="boolean" value = "true"> 
+                <script>function check() {
+                    document.getElementById("elite").checked = true;
+                }
+                
+                function uncheck() {
+                    document.getElementById("elite").checked = false;
+                }</script>
+                <br>
+    
+                <label for = "player_height_score">Player_Height_Score: </label>
+                <input type="number" id = "player_height_score" name = "player_height_score" value = <%= statistic.player_height_score %>> <br>
+    
+                <label for = "active">Active: </label>
+                <input type="checkbox" id = "active"  name = "active" post = "boolean" value =  "true"> 
+                <script>function check() {
+                    document.getElementById("elite").checked = true;
+                }
+                
+                function uncheck() {
+                    document.getElementById("elite").checked = false;
+                }</script>
+                <br>
+    
+                <label for = "athlete_id">Athlete_id: </label>
+                <input type="text" readonly id = "athlete_id" name = "athlete_id" value = <%= statistic.athlete_id %>> <br>
+
+                <label for = "_id">Statistic_id:: </label>
+                <input type="text" readonly id = "_id" name = "_id" value = <%= statistic._id %>> <br>
+                
+                
+    
+                <button type = "submit">Submit</button>
+            </form>
+        </div>
+    </interior-body>
+</body>
+
+</html>

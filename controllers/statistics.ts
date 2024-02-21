@@ -72,12 +72,12 @@ export const addStatistic = async(req: Request, res: Response): Promise<void> =>
 
 export const updateStatistic = async(req: Request, res: Response): Promise<void> => {
     try {
+        console.log("butt")
         const {
-            params: { id },
             body
         } = req;
         const updatedStatistic: IStatistic | null = await Statistic.findByIdAndUpdate(
-            { _id: id },
+            { _id: body._id },
             body,
             { new: true }
         );
@@ -89,5 +89,22 @@ export const updateStatistic = async(req: Request, res: Response): Promise<void>
         });
     } catch(err) {
         throw err;
+    }
+};
+
+export const editStatistic = async(req: Request, res: Response): Promise<void> => {
+    try {
+        console.log('ggs')
+        const statistic: IStatistic[] | null = await Statistic.findOne(
+            {_id: req.params.id }
+        );
+
+        console.log("going to edit form")
+
+        res.render('edit-form.ejs', {
+            statistic: statistic
+        });
+    } catch(err) {
+        console.error(err);
     }
 };
