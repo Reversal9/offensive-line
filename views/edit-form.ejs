@@ -51,7 +51,7 @@
             
             
             <%= statistic.month %> <br>
-            <form id="formff" action="/form/editform" method="POST" onsubmit="return false">
+            <form id="formff" method="post" action="/form/editform">
                 
                 <label for = "month">Month: </label>
                 <input type= "number" id = "month" name = "month" value = <%= statistic.month %> > <br>
