@@ -1,32 +1,20 @@
-import { Response, Request } from "express";
 import { IUser } from "../types/user";
-import User from "../models/user";
-import mongoose from "mongoose";
+import { model, Schema } from "mongoose";
 
-export const addUser = async(req: Request, res: Response): Promise<void> => {
-    try {
-        const body = req.body;
-        const user: IUser = new User({
-            username: body.username,
-            password: body.password,
-           
-        });
-        const newUser: IUser = await user.save();
-        const allUser: IUser[] = await User.find();
-        res.status(201).json({
-            message: "User added",
-            user: newUser,
-            users: allUser
-        });
-    } catch(err) {
-        throw err;
+const userSchema: Schema = new Schema(
+    {
+        username: {
+            type: String,
+            required: true,
+        },
+        password: {
+            type: String,
+            required: true,
+        }
+    },
+    {
+        timestamps: true
     }
-};
+);
 
-export const authenticateUser = async(req: Request, res: Response): Promise<void> => {
-    try {
-        
-    } catch(err) {
-        throw err;
-    }
-};
+export default model<IUser>("User", userSchema);
