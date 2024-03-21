@@ -1,3 +1,5 @@
+
+/*
 import express, { Router } from "express";
 import {addUser} from "../controllers/user";
 
@@ -44,3 +46,5 @@ router.post('/register', (req, res) =>
 })
 
 export default router;
+
+*/
